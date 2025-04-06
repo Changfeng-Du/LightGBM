@@ -38,7 +38,7 @@ with col2:
     BMXBMI = st.number_input("Body Mass Index (kg/m²):", min_value=11.5, max_value=67.3, value=25.0)
     LBXWBCSI = st.number_input("White Blood Cell Count (10^9/L):", min_value=1.4, max_value=117.2, value=6.0)
     LBXRBCSI = st.number_input("Red Blood Cell Count (10^9/L):", min_value=2.52, max_value=7.9, value=3.0)
-    LBXPLTSI = st.number_input("Platelet  Count (10^9/L):", min_value=14, max_value=777, value=200.0)
+    LBXPLTSI = st.number_input("Platelet  Count (10^9/L):", min_value=14.0, max_value=777.0, value=200.0)
 # Process inputs and make predictions
 feature_values = [smoker, drink, sleep, Hypertension, HHR, 
                  INDFMPIR, BMXBMI, LBXWBCSI, LBXRBCSI,LBXPLTSI]
