@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="R2PMML package" version="0.30.0"/>
+		<Timestamp>2025-04-06T03:26:25Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name="_target" optype="categorical" dataType="integer">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="smoker" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="1.0" rightMargin="3.0"/>
+		</DataField>
+		<DataField name="drink" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="1.0" rightMargin="2.0"/>
+		</DataField>
+		<DataField name="sleep" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="1.0" rightMargin="2.0"/>
+		</DataField>
+		<DataField name="Hypertension" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="1.0" rightMargin="2.0"/>
+		</DataField>
+		<DataField name="HHR" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.305084746" rightMargin="1.46728972"/>
+		</DataField>
+		<DataField name="INDFMPIR" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="0.0" rightMargin="5.0"/>
+		</DataField>
+		<DataField name="BMXBMI" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="14.3" rightMargin="77.5"/>
+		</DataField>
+		<DataField name="LBXWBCSI" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="2.8" rightMargin="117.2"/>
+		</DataField>
+		<DataField name="LBXRBCSI" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="2.52" rightMargin="6.94"/>
+		</DataField>
+		<DataField name="LBXPLTSI" optype="continuous" dataType="double">
+			<Interval closure="closedClosed" leftMargin="49.0" rightMargin="598.0"/>
+		</DataField>
+	</DataDictionary>
+	<MiningModel functionName="classification" algorithmName="LightGBM">
+		<MiningSchema>
+			<Extension name="X-FeatureImportances">
+				<InlineTable>
+					<Extension name="numberOfImportances" value="20"/>
+					<Extension name="numberOfNonZeroImportances" value="20"/>
+					<Extension name="sumOfImportances" value="240.0"/>
+					<Extension name="minImportance" value="2.0"/>
+					<Extension name="maxImportance" value="30.0"/>
+					<row>
+						<data:name>LBXPLTSI</data:name>
+						<data:importance>30.0</data:importance>
+					</row>
+					<row>
+						<data:name>LBXPLTSI</data:name>
+						<data:importance>30.0</data:importance>
+					</row>
+					<row>
+						<data:name>LBXRBCSI</data:name>
+						<data:importance>17.0</data:importance>
+					</row>
+					<row>
+						<data:name>LBXRBCSI</data:name>
+						<data:importance>17.0</data:importance>
+					</row>
+					<row>
+						<data:name>LBXWBCSI</data:name>
+						<data:importance>19.0</data:importance>
+					</row>
+					<row>
+						<data:name>LBXWBCSI</data:name>
+						<data:importance>19.0</data:importance>
+					</row>
+					<row>
+						<data:name>HHR</data:name>
+						<data:importance>14.0</data:importance>
+					</row>
+					<row>
+						<data:name>HHR</data:name>
+						<data:importance>14.0</data:importance>
+					</row>
+					<row>
+						<data:name>Hypertension</data:name>
+						<data:importance>3.0</data:importance>
+					</row>
+					<row>
+						<data:name>Hypertension</data:name>
+						<data:importance>3.0</data:importance>
+					</row>
+					<row>
+						<data:name>drink</data:name>
+						<data:importance>3.0</data:importance>
+					</row>
+					<row>
+						<data:name>drink</data:name>
+						<data:importance>3.0</data:importance>
+					</row>
+					<row>
+						<data:name>INDFMPIR</data:name>
+						<data:importance>11.0</data:importance>
+					</row>
+					<row>
+						<data:name>INDFMPIR</data:name>
+						<data:importance>11.0</data:importance>
+					</row>
+					<row>
+						<data:name>smoker</data:name>
+						<data:importance>5.0</data:importance>
+					</row>
+					<row>
+						<data:name>smoker</data:name>
+						<data:importance>5.0</data:importance>
+					</row>
+					<row>
+						<data:name>sleep</data:name>
+						<data:importance>2.0</data:importance>
+					</row>
+					<row>
+						<data:name>sleep</data:name>
+						<data:importance>2.0</data:importance>
+					</row>
+					<row>
+						<data:name>BMXBMI</data:name>
+						<data:importance>16.0</data:importance>
+					</row>
+					<row>
+						<data:name>BMXBMI</data:name>
+						<data:importance>16.0</data:importance>
+					</row>
+				</InlineTable>
+			</Extension>
+			<MiningField name="_target" usageType="target"/>
+			<MiningField name="smoker" importance="10.0" invalidValueTreatment="asIs"/>
+			<MiningField name="drink" importance="6.0" invalidValueTreatment="asIs"/>
+			<MiningField name="sleep" importance="4.0" invalidValueTreatment="asIs"/>
+			<MiningField name="Hypertension" importance="6.0" invalidValueTreatment="asIs"/>
+			<MiningField name="HHR" importance="28.0" invalidValueTreatment="asIs"/>
+			<MiningField name="INDFMPIR" importance="22.0" invalidValueTreatment="asIs"/>
+			<MiningField name="BMXBMI" importance="32.0" invalidValueTreatment="asIs"/>
+			<MiningField name="LBXWBCSI" importance="38.0" invalidValueTreatment="asIs"/>
+			<MiningField name="LBXRBCSI" importance="34.0" invalidValueTreatment="asIs"/>
+			<MiningField name="LBXPLTSI" importance="60.0" invalidValueTreatment="asIs"/>
+		</MiningSchema>
+		<Segmentation multipleModelMethod="modelChain" missingPredictionTreatment="returnMissing">
+			<Segment id="1">
+				<True/>
+				<MiningModel functionName="regression">
+					<MiningSchema>
+						<MiningField name="smoker"/>
+						<MiningField name="drink"/>
+						<MiningField name="sleep"/>
+						<MiningField name="Hypertension"/>
+						<MiningField name="HHR"/>
+						<MiningField name="INDFMPIR"/>
+						<MiningField name="BMXBMI"/>
+						<MiningField name="LBXWBCSI"/>
+						<MiningField name="LBXRBCSI"/>
+						<MiningField name="LBXPLTSI"/>
+					</MiningSchema>
+					<Output>
+						<OutputField name="lgbmValue" optype="continuous" dataType="double" isFinalResult="false"/>
+					</Output>
+					<Segmentation multipleModelMethod="sum" missingPredictionTreatment="returnMissing">
+						<Segment id="1">
+							<True/>
+							<TreeModel functionName="regression" missingValueStrategy="defaultChild" splitCharacteristic="binarySplit">
+								<MiningSchema>
+									<MiningField name="smoker"/>
+									<MiningField name="drink"/>
+									<MiningField name="sleep"/>
+									<MiningField name="Hypertension"/>
+									<MiningField name="HHR"/>
+									<MiningField name="INDFMPIR"/>
+									<MiningField name="BMXBMI"/>
+									<MiningField name="LBXWBCSI"/>
+									<MiningField name="LBXRBCSI"/>
+									<MiningField name="LBXPLTSI"/>
+								</MiningSchema>
+								<Node id="-1" score="-1.0625" recordCount="2912" defaultChild="-2">
+									<True/>
+									<Node id="-2" score="0.4" recordCount="2543" defaultChild="-3">
+										<SimplePredicate field="Hypertension" operator="lessOrEqual" value="1.5000000000000002"/>
+										<Node id="-3" score="-1.3770491803278688" recordCount="2421" defaultChild="-4">
+											<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="4.9958369331620665"/>
+											<Node id="-4" score="-0.3312883435582822" recordCount="2233" defaultChild="-6">
+												<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="39.47848621344891"/>
+												<Node id="-6" score="-1.1578947368421053" recordCount="353" defaultChild="-9">
+													<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="5.601266428851526"/>
+													<Node id="-9" score="-1.5988538681948423" recordCount="309" defaultChild="0">
+														<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="239.592161944485"/>
+														<Node id="0" score="-1.0625" recordCount="64">
+															<SimplePredicate field="drink" operator="lessOrEqual" value="1.5000000000000002"/>
+														</Node>
+														<Node id="9" score="0.15510204081632653" recordCount="245">
+															<SimplePredicate field="drink" operator="greaterThan" value="1.5000000000000002"/>
+														</Node>
+													</Node>
+													<Node id="6" score="-1.6363636363636365" recordCount="44">
+														<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="239.592161944485"/>
+													</Node>
+												</Node>
+												<Node id="-5" score="-1.1724137931034482" recordCount="1880" defaultChild="-7">
+													<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="5.601266428851526"/>
+													<Node id="-7" score="-1.6363636363636365" recordCount="1842" defaultChild="4">
+														<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="5.522988434822766"/>
+														<Node id="4" score="-1.1724137931034482" recordCount="29">
+															<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="0.35500000000000004"/>
+														</Node>
+														<Node id="-10" score="0.15510204081632653" recordCount="1813" defaultChild="-16">
+															<SimplePredicate field="INDFMPIR" operator="greaterThan" value="0.35500000000000004"/>
+															<Node id="-16" score="-1.2" recordCount="763" defaultChild="-17">
+																<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="203.98753553908304"/>
+																<Node id="-17" score="1.2363636363636363" recordCount="543" defaultChild="-18">
+																	<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="191.02433506725353"/>
+																	<Node id="-18" score="-1.6666666666666667" recordCount="487" defaultChild="-20">
+																		<SimplePredicate field="smoker" operator="lessOrEqual" value="2.5000000000000004"/>
+																		<Node id="-20" score="0.6" recordCount="463" defaultChild="-24">
+																			<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="187.07001798646505"/>
+																			<Node id="-24" score="0.46601941747572817" recordCount="356" defaultChild="7">
+																				<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="31.673868307626105"/>
+																				<Node id="7" score="-1.5" recordCount="8">
+																					<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="115.50000000000001"/>
+																				</Node>
+																				<Node id="24" score="1.1379310344827587" recordCount="348">
+																					<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="115.50000000000001"/>
+																				</Node>
+																			</Node>
+																			<Node id="-21" score="1.2941176470588227" recordCount="107" defaultChild="-27">
+																				<SimplePredicate field="BMXBMI" operator="greaterThan" value="31.673868307626105"/>
+																				<Node id="-27" score="-1.4" recordCount="67" defaultChild="20">
+																					<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="4.649188913484106"/>
+																					<Node id="20" score="1.2941176470588227" recordCount="51">
+																						<SimplePredicate field="HHR" operator="lessOrEqual" value="0.9996763948869991"/>
+																					</Node>
+																					<Node id="27" score="-0.75" recordCount="16">
+																						<SimplePredicate field="HHR" operator="greaterThan" value="0.9996763948869991"/>
+																					</Node>
+																				</Node>
+																				<Node id="-25" score="1.1379310344827587" recordCount="40" defaultChild="21">
+																					<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="4.649188913484106"/>
+																					<Node id="21" score="-1.4666666666666668" recordCount="30">
+																						<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="182.13329978333803"/>
+																					</Node>
+																					<Node id="25" score="1.1999999999999995" recordCount="10">
+																						<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="182.13329978333803"/>
+																					</Node>
+																				</Node>
+																			</Node>
+																		</Node>
+																		<Node id="18" score="-1.1666666666666667" recordCount="24">
+																			<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="187.07001798646505"/>
+																		</Node>
+																	</Node>
+																	<Node id="-19" score="-1.1666666666666667" recordCount="56" defaultChild="17">
+																		<SimplePredicate field="smoker" operator="greaterThan" value="2.5000000000000004"/>
+																		<Node id="17" score="-1.6666666666666667" recordCount="36">
+																			<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="184.0937660255005"/>
+																		</Node>
+																		<Node id="19" score="0.6" recordCount="20">
+																			<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="184.0937660255005"/>
+																		</Node>
+																	</Node>
+																</Node>
+																<Node id="16" score="1.2363636363636363" recordCount="220">
+																	<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="191.02433506725353"/>
+																</Node>
+															</Node>
+															<Node id="-11" score="0.7692307692307693" recordCount="1050" defaultChild="-12">
+																<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="203.98753553908304"/>
+																<Node id="-12" score="1.2574850299401197" recordCount="677" defaultChild="-13">
+																	<SimplePredicate field="smoker" operator="lessOrEqual" value="2.5000000000000004"/>
+																	<Node id="-13" score="-1.3846153846153846" recordCount="45" defaultChild="10">
+																		<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="212.00463406904603"/>
+																		<Node id="10" score="0.7692307692307693" recordCount="13">
+																			<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="25.90109202362365"/>
+																		</Node>
+																		<Node id="13" score="-1.875" recordCount="32">
+																			<SimplePredicate field="BMXBMI" operator="greaterThan" value="25.90109202362365"/>
+																		</Node>
+																	</Node>
+																	<Node id="-14" score="-1.875" recordCount="632" defaultChild="-28">
+																		<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="212.00463406904603"/>
+																		<Node id="-28" score="-0.75" recordCount="413" defaultChild="-30">
+																			<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="1.89937926969724"/>
+																			<Node id="-30" score="-0.9206349206349206" recordCount="246" defaultChild="12">
+																				<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="266.0376825109126"/>
+																				<Node id="12" score="-1.3846153846153846" recordCount="13">
+																					<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="219.00136395008303"/>
+																				</Node>
+																				<Node id="30" score="0.8669527896995708" recordCount="233">
+																					<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="219.00136395008303"/>
+																				</Node>
+																			</Node>
+																			<Node id="-29" score="0.6153846153846154" recordCount="167" defaultChild="28">
+																				<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="266.0376825109126"/>
+																				<Node id="28" score="0.6153846153846154" recordCount="104">
+																					<SimplePredicate field="sleep" operator="lessOrEqual" value="1.5000000000000002"/>
+																				</Node>
+																				<Node id="29" score="-0.9206349206349206" recordCount="63">
+																					<SimplePredicate field="sleep" operator="greaterThan" value="1.5000000000000002"/>
+																				</Node>
+																			</Node>
+																		</Node>
+																		<Node id="-15" score="0.3333333333333333" recordCount="219" defaultChild="-26">
+																			<SimplePredicate field="INDFMPIR" operator="greaterThan" value="1.89937926969724"/>
+																			<Node id="-26" score="1.1999999999999995" recordCount="164" defaultChild="14">
+																				<SimplePredicate field="HHR" operator="lessOrEqual" value="1.0924899607024103"/>
+																				<Node id="14" score="0.3333333333333333" recordCount="144">
+																					<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="317.90298234357056"/>
+																				</Node>
+																				<Node id="26" score="-1.4" recordCount="20">
+																					<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="317.90298234357056"/>
+																				</Node>
+																			</Node>
+																			<Node id="15" score="-1.2" recordCount="55">
+																				<SimplePredicate field="HHR" operator="greaterThan" value="1.0924899607024103"/>
+																			</Node>
+																		</Node>
+																	</Node>
+																</Node>
+																<Node id="-23" score="-2.0" recordCount="373" defaultChild="11">
+																	<SimplePredicate field="smoker" operator="greaterThan" value="2.5000000000000004"/>
+																	<Node id="11" score="1.2574850299401197" recordCount="167">
+																		<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="4.417018639583841"/>
+																	</Node>
+																	<Node id="23" score="0.46601941747572817" recordCount="206">
+																		<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="4.417018639583841"/>
+																	</Node>
+																</Node>
+															</Node>
+														</Node>
+													</Node>
+													<Node id="5" score="-1.1578947368421053" recordCount="38">
+														<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="5.522988434822766"/>
+													</Node>
+												</Node>
+											</Node>
+											<Node id="-22" score="-1.4666666666666668" recordCount="188" defaultChild="3">
+												<SimplePredicate field="BMXBMI" operator="greaterThan" value="39.47848621344891"/>
+												<Node id="3" score="-0.3312883435582822" recordCount="163">
+													<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="295.50000000000006"/>
+												</Node>
+												<Node id="22" score="-2.0" recordCount="25">
+													<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="295.50000000000006"/>
+												</Node>
+											</Node>
+										</Node>
+										<Node id="2" score="-1.3770491803278688" recordCount="122">
+											<SimplePredicate field="INDFMPIR" operator="greaterThan" value="4.9958369331620665"/>
+										</Node>
+									</Node>
+									<Node id="-8" score="-1.5" recordCount="369" defaultChild="1">
+										<SimplePredicate field="Hypertension" operator="greaterThan" value="1.5000000000000002"/>
+										<Node id="1" score="0.4" recordCount="20">
+											<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="115.50000000000001"/>
+										</Node>
+										<Node id="8" score="-1.5988538681948423" recordCount="349">
+											<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="115.50000000000001"/>
+										</Node>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="2">
+							<True/>
+							<TreeModel functionName="regression" missingValueStrategy="defaultChild" splitCharacteristic="binarySplit">
+								<MiningSchema>
+									<MiningField name="smoker"/>
+									<MiningField name="Hypertension"/>
+									<MiningField name="HHR"/>
+									<MiningField name="INDFMPIR"/>
+									<MiningField name="BMXBMI"/>
+									<MiningField name="LBXWBCSI"/>
+									<MiningField name="LBXRBCSI"/>
+									<MiningField name="LBXPLTSI"/>
+								</MiningSchema>
+								<Node id="-1" score="-1.6892968480419166" recordCount="2912" defaultChild="0">
+									<True/>
+									<Node id="0" score="-1.6892968480419166" recordCount="31">
+										<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="3.85"/>
+									</Node>
+									<Node id="-2" score="-0.6057421257494279" recordCount="2881" defaultChild="-3">
+										<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="3.85"/>
+										<Node id="-3" score="-1.2347108531165596" recordCount="1205" defaultChild="-4">
+											<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="28.102543424782354"/>
+											<Node id="-4" score="2.4294458523891147" recordCount="632" defaultChild="1">
+												<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="24.588156261326503"/>
+												<Node id="1" score="-0.6057421257494279" recordCount="129">
+													<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="183.06342114112354"/>
+												</Node>
+												<Node id="-5" score="0.2433184166020846" recordCount="503" defaultChild="-12">
+													<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="183.06342114112354"/>
+													<Node id="-12" score="-0.5810276670987247" recordCount="430" defaultChild="-17">
+														<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="289.79585932940256"/>
+														<Node id="-17" score="-0.8798910275395443" recordCount="313" defaultChild="-23">
+															<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="8.097949972050268"/>
+															<Node id="-23" score="1.064114517153488" recordCount="187" defaultChild="4">
+																<SimplePredicate field="smoker" operator="lessOrEqual" value="2.5000000000000004"/>
+																<Node id="4" score="0.2433184166020846" recordCount="170">
+																	<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="269.00995836791105"/>
+																</Node>
+																<Node id="23" score="2.02647360015479" recordCount="17">
+																	<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="269.00995836791105"/>
+																</Node>
+															</Node>
+															<Node id="-18" score="0.9818970786788106" recordCount="126" defaultChild="17">
+																<SimplePredicate field="smoker" operator="greaterThan" value="2.5000000000000004"/>
+																<Node id="17" score="0.9818970786788106" recordCount="111">
+																	<SimplePredicate field="Hypertension" operator="lessOrEqual" value="1.5000000000000002"/>
+																</Node>
+																<Node id="18" score="3.564196555865681" recordCount="15">
+																	<SimplePredicate field="Hypertension" operator="greaterThan" value="1.5000000000000002"/>
+																</Node>
+															</Node>
+														</Node>
+														<Node id="-15" score="1.3117615567020402" recordCount="117" defaultChild="-20">
+															<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="8.097949972050268"/>
+															<Node id="-20" score="0.3973166164265955" recordCount="101" defaultChild="12">
+																<SimplePredicate field="HHR" operator="lessOrEqual" value="1.1685726044705802"/>
+																<Node id="12" score="-0.009057078809442773" recordCount="96">
+																	<SimplePredicate field="HHR" operator="lessOrEqual" value="1.1362277370607452"/>
+																</Node>
+																<Node id="20" score="3.222206856785266" recordCount="5">
+																	<SimplePredicate field="HHR" operator="greaterThan" value="1.1362277370607452"/>
+																</Node>
+															</Node>
+															<Node id="15" score="-1.8454702726447492" recordCount="16">
+																<SimplePredicate field="HHR" operator="greaterThan" value="1.1685726044705802"/>
+															</Node>
+														</Node>
+													</Node>
+													<Node id="5" score="-0.8747561714681581" recordCount="73">
+														<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="289.79585932940256"/>
+													</Node>
+												</Node>
+											</Node>
+											<Node id="-6" score="-0.8747561714681581" recordCount="573" defaultChild="-7">
+												<SimplePredicate field="BMXBMI" operator="greaterThan" value="24.588156261326503"/>
+												<Node id="-7" score="0.9241868898515821" recordCount="332" defaultChild="-10">
+													<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="7.503870238014495"/>
+													<Node id="-10" score="-1.9826564604510193" recordCount="128" defaultChild="-21">
+														<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="180.66123311489403"/>
+														<Node id="-21" score="3.222206856785266" recordCount="29" defaultChild="3">
+															<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="25.544922899015955"/>
+															<Node id="3" score="2.4294458523891147" recordCount="3">
+																<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="3.0800000000000005"/>
+															</Node>
+															<Node id="21" score="-1.8980129259444305" recordCount="26">
+																<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="3.0800000000000005"/>
+															</Node>
+														</Node>
+														<Node id="-11" score="1.0561545363246925" recordCount="99" defaultChild="10">
+															<SimplePredicate field="BMXBMI" operator="greaterThan" value="25.544922899015955"/>
+															<Node id="10" score="1.0561545363246925" recordCount="44">
+																<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="1.2214771013520653"/>
+															</Node>
+															<Node id="11" score="-0.5810276670987247" recordCount="55">
+																<SimplePredicate field="INDFMPIR" operator="greaterThan" value="1.2214771013520653"/>
+															</Node>
+														</Node>
+													</Node>
+													<Node id="-19" score="3.564196555865681" recordCount="204" defaultChild="7">
+														<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="180.66123311489403"/>
+														<Node id="7" score="-1.337676456908065" recordCount="185">
+															<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="5.242169993482531"/>
+														</Node>
+														<Node id="19" score="0.3973166164265955" recordCount="19">
+															<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="5.242169993482531"/>
+														</Node>
+													</Node>
+												</Node>
+												<Node id="-8" score="-1.337676456908065" recordCount="241" defaultChild="-16">
+													<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="7.503870238014495"/>
+													<Node id="-16" score="-1.8454702726447492" recordCount="135" defaultChild="6">
+														<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="253.18161417974605"/>
+														<Node id="6" score="0.9241868898515821" recordCount="20">
+															<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="3.8347585994156552"/>
+														</Node>
+														<Node id="16" score="-0.8798910275395443" recordCount="115">
+															<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="3.8347585994156552"/>
+														</Node>
+													</Node>
+													<Node id="-9" score="-2.1397577484030954" recordCount="106" defaultChild="-13">
+														<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="253.18161417974605"/>
+														<Node id="-13" score="-0.009057078809442773" recordCount="96" defaultChild="8">
+															<SimplePredicate field="HHR" operator="lessOrEqual" value="1.1784411280000002"/>
+															<Node id="8" score="-2.1397577484030954" recordCount="6">
+																<SimplePredicate field="HHR" operator="lessOrEqual" value="0.7192135827176646"/>
+															</Node>
+															<Node id="-14" score="-1.867820415570902" recordCount="90" defaultChild="-22">
+																<SimplePredicate field="HHR" operator="greaterThan" value="0.7192135827176646"/>
+																<Node id="-22" score="-1.8980129259444305" recordCount="20" defaultChild="13">
+																	<SimplePredicate field="smoker" operator="lessOrEqual" value="1.5000000000000002"/>
+																	<Node id="13" score="-1.867820415570902" recordCount="11">
+																		<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="4.830420397873971"/>
+																	</Node>
+																	<Node id="22" score="1.064114517153488" recordCount="9">
+																		<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="4.830420397873971"/>
+																	</Node>
+																</Node>
+																<Node id="14" score="1.3117615567020402" recordCount="70">
+																	<SimplePredicate field="smoker" operator="greaterThan" value="1.5000000000000002"/>
+																</Node>
+															</Node>
+														</Node>
+														<Node id="9" score="-1.9826564604510193" recordCount="10">
+															<SimplePredicate field="HHR" operator="greaterThan" value="1.1784411280000002"/>
+														</Node>
+													</Node>
+												</Node>
+											</Node>
+										</Node>
+										<Node id="-24" score="2.02647360015479" recordCount="1676" defaultChild="2">
+											<SimplePredicate field="BMXBMI" operator="greaterThan" value="28.102543424782354"/>
+											<Node id="2" score="-1.2347108531165596" recordCount="25">
+												<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="3.4045264939521456"/>
+											</Node>
+											<Node id="-25" score="-0.18757209548037299" recordCount="1651" defaultChild="-26">
+												<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="3.4045264939521456"/>
+												<Node id="-26" score="0.6826850497993833" recordCount="322" defaultChild="24">
+													<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="4.1399045017175355"/>
+													<Node id="24" score="-0.18757209548037299" recordCount="106">
+														<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="1.2214771013520653"/>
+													</Node>
+													<Node id="26" score="0.7438207024620055" recordCount="216">
+														<SimplePredicate field="INDFMPIR" operator="greaterThan" value="1.2214771013520653"/>
+													</Node>
+												</Node>
+												<Node id="-27" score="0.7438207024620055" recordCount="1329" defaultChild="-28">
+													<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="4.1399045017175355"/>
+													<Node id="-28" score="-0.097782934889023" recordCount="446" defaultChild="25">
+														<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="30.889884602716204"/>
+														<Node id="25" score="0.6826850497993833" recordCount="240">
+															<SimplePredicate field="HHR" operator="lessOrEqual" value="1.0499847581900503"/>
+														</Node>
+														<Node id="28" score="-0.09492471748126442" recordCount="206">
+															<SimplePredicate field="HHR" operator="greaterThan" value="1.0499847581900503"/>
+														</Node>
+													</Node>
+													<Node id="-29" score="-0.09492471748126442" recordCount="883" defaultChild="-30">
+														<SimplePredicate field="BMXBMI" operator="greaterThan" value="30.889884602716204"/>
+														<Node id="-30" score="0.16768903974726956" recordCount="540" defaultChild="27">
+															<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="8.244512289867272"/>
+															<Node id="27" score="-0.097782934889023" recordCount="399">
+																<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="240.28091944218605"/>
+															</Node>
+															<Node id="30" score="-0.962011994705593" recordCount="141">
+																<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="240.28091944218605"/>
+															</Node>
+														</Node>
+														<Node id="29" score="0.16768903974726956" recordCount="343">
+															<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="8.244512289867272"/>
+														</Node>
+													</Node>
+												</Node>
+											</Node>
+										</Node>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="3">
+							<True/>
+							<TreeModel functionName="regression" missingValueStrategy="defaultChild" splitCharacteristic="binarySplit">
+								<MiningSchema>
+									<MiningField name="drink"/>
+									<MiningField name="sleep"/>
+									<MiningField name="Hypertension"/>
+									<MiningField name="HHR"/>
+									<MiningField name="INDFMPIR"/>
+									<MiningField name="BMXBMI"/>
+									<MiningField name="LBXWBCSI"/>
+									<MiningField name="LBXRBCSI"/>
+									<MiningField name="LBXPLTSI"/>
+								</MiningSchema>
+								<Node id="-1" score="-0.2049698932304594" recordCount="2912" defaultChild="-2">
+									<True/>
+									<Node id="-2" score="-0.6346871089454775" recordCount="2543" defaultChild="-3">
+										<SimplePredicate field="Hypertension" operator="lessOrEqual" value="1.5000000000000002"/>
+										<Node id="-3" score="-0.0973127236206886" recordCount="1834" defaultChild="-4">
+											<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="2.2696206745877854"/>
+											<Node id="-4" score="-1.5964199289203314" recordCount="306" defaultChild="-6">
+												<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="0.7519104679999876"/>
+												<Node id="-6" score="-9.861108764984898" recordCount="244" defaultChild="0">
+													<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="320.3046631542965"/>
+													<Node id="0" score="-0.2049698932304594" recordCount="166">
+														<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="4.819917632725557"/>
+													</Node>
+													<Node id="-7" score="-1.943710941563711" recordCount="78" defaultChild="6">
+														<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="4.819917632725557"/>
+														<Node id="6" score="-1.943710941563711" recordCount="40">
+															<SimplePredicate field="HHR" operator="lessOrEqual" value="1.1290299411623703"/>
+														</Node>
+														<Node id="7" score="-0.22797613273294098" recordCount="38">
+															<SimplePredicate field="HHR" operator="greaterThan" value="1.1290299411623703"/>
+														</Node>
+													</Node>
+												</Node>
+												<Node id="-11" score="1.8520790503250646" recordCount="62" defaultChild="4">
+													<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="320.3046631542965"/>
+													<Node id="4" score="1.3980158550868393" recordCount="43">
+														<SimplePredicate field="drink" operator="lessOrEqual" value="1.5000000000000002"/>
+													</Node>
+													<Node id="11" score="-0.5247293660542681" recordCount="19">
+														<SimplePredicate field="drink" operator="greaterThan" value="1.5000000000000002"/>
+													</Node>
+												</Node>
+											</Node>
+											<Node id="-5" score="1.3980158550868393" recordCount="1528" defaultChild="-8">
+												<SimplePredicate field="INDFMPIR" operator="greaterThan" value="0.7519104679999876"/>
+												<Node id="-8" score="-0.22797613273294098" recordCount="1462" defaultChild="-9">
+													<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="11.504518550471401"/>
+													<Node id="-9" score="-10.387528800918375" recordCount="675" defaultChild="-16">
+														<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="7.1019045215332905"/>
+														<Node id="-16" score="0.5351823581542053" recordCount="655" defaultChild="-17">
+															<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="7.0929496563971055"/>
+															<Node id="-17" score="1.1664258955239173" recordCount="617" defaultChild="-18">
+																<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="6.902019815426321"/>
+																<Node id="-18" score="-1.7287001868584895" recordCount="599" defaultChild="-19">
+																	<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="6.899805054510947"/>
+																	<Node id="-19" score="1.6390836732962706" recordCount="577" defaultChild="-21">
+																		<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="6.800706716161221"/>
+																		<Node id="-21" score="0.26103541812162706" recordCount="221" defaultChild="-26">
+																			<SimplePredicate field="sleep" operator="lessOrEqual" value="1.5000000000000002"/>
+																			<Node id="-26" score="-0.679453317589257" recordCount="33" defaultChild="3">
+																				<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="133.13110171258452"/>
+																				<Node id="3" score="-1.5964199289203314" recordCount="5">
+																					<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="28.200413348160204"/>
+																				</Node>
+																				<Node id="26" score="1.238782951392201" recordCount="28">
+																					<SimplePredicate field="BMXBMI" operator="greaterThan" value="28.200413348160204"/>
+																				</Node>
+																			</Node>
+																			<Node id="21" score="-0.48409302311785984" recordCount="188">
+																				<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="133.13110171258452"/>
+																			</Node>
+																		</Node>
+																		<Node id="-20" score="1.452660878876409" recordCount="356" defaultChild="19">
+																			<SimplePredicate field="sleep" operator="greaterThan" value="1.5000000000000002"/>
+																			<Node id="19" score="1.452660878876409" recordCount="38">
+																				<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="4.598398009035736"/>
+																			</Node>
+																			<Node id="-22" score="-0.48409302311785984" recordCount="318" defaultChild="-23">
+																				<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="4.598398009035736"/>
+																				<Node id="-23" score="-0.3891204525818281" recordCount="135" defaultChild="-24">
+																					<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="4.361148520520656"/>
+																					<Node id="-24" score="-1.9652364881244788" recordCount="107" defaultChild="20">
+																						<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="4.221587915131821"/>
+																						<Node id="20" score="0.26103541812162706" recordCount="100">
+																							<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="6.698582846950742"/>
+																						</Node>
+																						<Node id="24" score="-3.408635866167041" recordCount="7">
+																							<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="6.698582846950742"/>
+																						</Node>
+																					</Node>
+																					<Node id="23" score="-1.9652364881244788" recordCount="28">
+																						<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="4.221587915131821"/>
+																					</Node>
+																				</Node>
+																				<Node id="-29" score="-1.1283801455053604" recordCount="183" defaultChild="22">
+																					<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="4.361148520520656"/>
+																					<Node id="22" score="-0.3891204525818281" recordCount="39">
+																						<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="176.00814786111002"/>
+																					</Node>
+																					<Node id="-30" score="0.9032460096925147" recordCount="144" defaultChild="29">
+																						<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="176.00814786111002"/>
+																						<Node id="29" score="0.9032460096925147" recordCount="117">
+																							<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="244.16948749916654"/>
+																						</Node>
+																						<Node id="30" score="-0.45964993121927267" recordCount="27">
+																							<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="244.16948749916654"/>
+																						</Node>
+																					</Node>
+																				</Node>
+																			</Node>
+																		</Node>
+																	</Node>
+																	<Node id="18" score="1.6390836732962706" recordCount="22">
+																		<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="6.800706716161221"/>
+																	</Node>
+																</Node>
+																<Node id="17" score="-1.7287001868584895" recordCount="18">
+																	<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="6.899805054510947"/>
+																</Node>
+															</Node>
+															<Node id="16" score="1.1664258955239173" recordCount="38">
+																<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="6.902019815426321"/>
+															</Node>
+														</Node>
+														<Node id="-12" score="-0.5247293660542681" recordCount="20" defaultChild="9">
+															<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="7.0929496563971055"/>
+															<Node id="9" score="0.23499460803838984" recordCount="7">
+																<SimplePredicate field="drink" operator="lessOrEqual" value="1.5000000000000002"/>
+															</Node>
+															<Node id="12" score="-2.9474118111216523" recordCount="13">
+																<SimplePredicate field="drink" operator="greaterThan" value="1.5000000000000002"/>
+															</Node>
+														</Node>
+													</Node>
+													<Node id="-10" score="0.23499460803838984" recordCount="787" defaultChild="8">
+														<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="7.1019045215332905"/>
+														<Node id="8" score="-10.387528800918375" recordCount="1">
+															<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="17.350000000000005"/>
+														</Node>
+														<Node id="-14" score="-1.2313304368395595" recordCount="786" defaultChild="10">
+															<SimplePredicate field="BMXBMI" operator="greaterThan" value="17.350000000000005"/>
+															<Node id="10" score="1.8520790503250646" recordCount="21">
+																<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="7.1891227970016205"/>
+															</Node>
+															<Node id="-15" score="-2.0941413026296627" recordCount="765" defaultChild="14">
+																<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="7.1891227970016205"/>
+																<Node id="14" score="-2.0941413026296627" recordCount="9">
+																	<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="7.200688278488816"/>
+																</Node>
+																<Node id="-27" score="1.238782951392201" recordCount="756" defaultChild="15">
+																	<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="7.200688278488816"/>
+																	<Node id="15" score="0.5351823581542053" recordCount="595">
+																		<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="1.6451914384239352"/>
+																	</Node>
+																	<Node id="-28" score="0.30953787828647483" recordCount="161" defaultChild="27">
+																		<SimplePredicate field="INDFMPIR" operator="greaterThan" value="1.6451914384239352"/>
+																		<Node id="27" score="0.30953787828647483" recordCount="130">
+																			<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="35.40594610253115"/>
+																		</Node>
+																		<Node id="28" score="-1.1283801455053604" recordCount="31">
+																			<SimplePredicate field="BMXBMI" operator="greaterThan" value="35.40594610253115"/>
+																		</Node>
+																	</Node>
+																</Node>
+															</Node>
+														</Node>
+													</Node>
+												</Node>
+												<Node id="-25" score="-3.408635866167041" recordCount="66" defaultChild="5">
+													<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="11.504518550471401"/>
+													<Node id="5" score="-9.861108764984898" recordCount="1">
+														<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="3.4045264939521456"/>
+													</Node>
+													<Node id="25" score="-0.679453317589257" recordCount="65">
+														<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="3.4045264939521456"/>
+													</Node>
+												</Node>
+											</Node>
+										</Node>
+										<Node id="-13" score="-2.9474118111216523" recordCount="709" defaultChild="2">
+											<SimplePredicate field="INDFMPIR" operator="greaterThan" value="2.2696206745877854"/>
+											<Node id="2" score="-0.0973127236206886" recordCount="669">
+												<SimplePredicate field="HHR" operator="lessOrEqual" value="1.2170097714887302"/>
+											</Node>
+											<Node id="13" score="-1.2313304368395595" recordCount="40">
+												<SimplePredicate field="HHR" operator="greaterThan" value="1.2170097714887302"/>
+											</Node>
+										</Node>
+									</Node>
+									<Node id="1" score="-0.6346871089454775" recordCount="369">
+										<SimplePredicate field="Hypertension" operator="greaterThan" value="1.5000000000000002"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="4">
+							<True/>
+							<TreeModel functionName="regression" missingValueStrategy="defaultChild" splitCharacteristic="binarySplit">
+								<MiningSchema>
+									<MiningField name="smoker"/>
+									<MiningField name="HHR"/>
+									<MiningField name="INDFMPIR"/>
+									<MiningField name="BMXBMI"/>
+									<MiningField name="LBXWBCSI"/>
+									<MiningField name="LBXRBCSI"/>
+									<MiningField name="LBXPLTSI"/>
+								</MiningSchema>
+								<Node id="-1" score="-1.3903594763426748" recordCount="2912" defaultChild="-2">
+									<True/>
+									<Node id="-2" score="-1.5129095961601626" recordCount="2890" defaultChild="-3">
+										<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="5.775000000000001"/>
+										<Node id="-3" score="2.937634132099379" recordCount="2884" defaultChild="0">
+											<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="5.747411472658861"/>
+											<Node id="0" score="-1.3903594763426748" recordCount="31">
+												<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="3.85"/>
+											</Node>
+											<Node id="-4" score="0.12976999935364544" recordCount="2853" defaultChild="-6">
+												<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="3.85"/>
+												<Node id="-6" score="0.6386360704097873" recordCount="290" defaultChild="3">
+													<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="22.705000000000002"/>
+													<Node id="3" score="0.12976999935364544" recordCount="176">
+														<SimplePredicate field="HHR" operator="lessOrEqual" value="1.0202022490000002"/>
+													</Node>
+													<Node id="6" score="-0.9495040714939941" recordCount="114">
+														<SimplePredicate field="HHR" operator="greaterThan" value="1.0202022490000002"/>
+													</Node>
+												</Node>
+												<Node id="-5" score="0.7942453507437335" recordCount="2563" defaultChild="4">
+													<SimplePredicate field="BMXBMI" operator="greaterThan" value="22.705000000000002"/>
+													<Node id="4" score="0.7942453507437335" recordCount="139">
+														<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="23.497130291208155"/>
+													</Node>
+													<Node id="-7" score="-0.9495040714939941" recordCount="2424" defaultChild="-24">
+														<SimplePredicate field="BMXBMI" operator="greaterThan" value="23.497130291208155"/>
+														<Node id="-24" score="0.5248311579305063" recordCount="241" defaultChild="-25">
+															<SimplePredicate field="HHR" operator="lessOrEqual" value="0.7899486576603286"/>
+															<Node id="-25" score="-1.3040563878360154" recordCount="207" defaultChild="-27">
+																<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="10.303690833004653"/>
+																<Node id="-27" score="1.2554917014695022" recordCount="145" defaultChild="-29">
+																	<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="256.17603237752354"/>
+																	<Node id="-29" score="10.46461988903991" recordCount="121" defaultChild="-30">
+																		<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="244.16948749916654"/>
+																		<Node id="-30" score="-1.1054637682994437" recordCount="73" defaultChild="5">
+																			<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="181.8750831894575"/>
+																			<Node id="5" score="0.6386360704097873" recordCount="57">
+																				<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="32.15292691526236"/>
+																			</Node>
+																			<Node id="30" score="-1.3731220433234084" recordCount="16">
+																				<SimplePredicate field="BMXBMI" operator="greaterThan" value="32.15292691526236"/>
+																			</Node>
+																		</Node>
+																		<Node id="29" score="-1.1054637682994437" recordCount="48">
+																			<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="181.8750831894575"/>
+																		</Node>
+																	</Node>
+																	<Node id="-28" score="0.9342309532607433" recordCount="24" defaultChild="27">
+																		<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="244.16948749916654"/>
+																		<Node id="27" score="0.9342309532607433" recordCount="23">
+																			<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="61.84679891103881"/>
+																		</Node>
+																		<Node id="28" score="10.46461988903991" recordCount="1">
+																			<SimplePredicate field="BMXBMI" operator="greaterThan" value="61.84679891103881"/>
+																		</Node>
+																	</Node>
+																</Node>
+																<Node id="25" score="-1.3250767039604612" recordCount="62">
+																	<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="256.17603237752354"/>
+																</Node>
+															</Node>
+															<Node id="-26" score="-1.3250767039604612" recordCount="34" defaultChild="24">
+																<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="10.303690833004653"/>
+																<Node id="24" score="-1.3040563878360154" recordCount="9">
+																	<SimplePredicate field="HHR" operator="lessOrEqual" value="0.6499556060596715"/>
+																</Node>
+																<Node id="26" score="1.2554917014695022" recordCount="25">
+																	<SimplePredicate field="HHR" operator="greaterThan" value="0.6499556060596715"/>
+																</Node>
+															</Node>
+														</Node>
+														<Node id="-8" score="-2.3707313388104057" recordCount="2183" defaultChild="-11">
+															<SimplePredicate field="HHR" operator="greaterThan" value="0.7899486576603286"/>
+															<Node id="-11" score="7.622996433837594" recordCount="790" defaultChild="-13">
+																<SimplePredicate field="smoker" operator="lessOrEqual" value="1.5000000000000002"/>
+																<Node id="-13" score="-0.4988706138115077" recordCount="188" defaultChild="-23">
+																	<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="170.88613490795254"/>
+																	<Node id="-23" score="-1.7495433494021835" recordCount="17" defaultChild="7">
+																		<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="0.860274626989849"/>
+																		<Node id="7" score="-2.3707313388104057" recordCount="10">
+																			<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="161.05935253109803"/>
+																		</Node>
+																		<Node id="23" score="0.5248311579305063" recordCount="7">
+																			<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="161.05935253109803"/>
+																		</Node>
+																	</Node>
+																	<Node id="-15" score="0.5503623554456532" recordCount="171" defaultChild="13">
+																		<SimplePredicate field="INDFMPIR" operator="greaterThan" value="0.860274626989849"/>
+																		<Node id="13" score="0.2812955152286843" recordCount="153">
+																			<SimplePredicate field="HHR" operator="lessOrEqual" value="1.1784411280000002"/>
+																		</Node>
+																		<Node id="15" score="1.8199857021979333" recordCount="18">
+																			<SimplePredicate field="HHR" operator="greaterThan" value="1.1784411280000002"/>
+																		</Node>
+																	</Node>
+																</Node>
+																<Node id="-12" score="0.4539338405867975" recordCount="602" defaultChild="-14">
+																	<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="170.88613490795254"/>
+																	<Node id="-14" score="0.2812955152286843" recordCount="161" defaultChild="11">
+																		<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="0.9508762275602206"/>
+																		<Node id="11" score="0.4539338405867975" recordCount="134">
+																			<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="35.2940624851035"/>
+																		</Node>
+																		<Node id="-22" score="-1.6624096831602015" recordCount="27" defaultChild="14">
+																			<SimplePredicate field="BMXBMI" operator="greaterThan" value="35.2940624851035"/>
+																			<Node id="14" score="0.5503623554456532" recordCount="9">
+																				<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="4.446069014014211"/>
+																			</Node>
+																			<Node id="22" score="-1.7495433494021835" recordCount="18">
+																				<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="4.446069014014211"/>
+																			</Node>
+																		</Node>
+																	</Node>
+																	<Node id="12" score="-0.4988706138115077" recordCount="441">
+																		<SimplePredicate field="INDFMPIR" operator="greaterThan" value="0.9508762275602206"/>
+																	</Node>
+																</Node>
+															</Node>
+															<Node id="-9" score="0.6203239250541726" recordCount="1393" defaultChild="-10">
+																<SimplePredicate field="smoker" operator="greaterThan" value="1.5000000000000002"/>
+																<Node id="-10" score="2.556956581736298" recordCount="317" defaultChild="-21">
+																	<SimplePredicate field="LBXRBCSI" operator="lessOrEqual" value="4.248090662665201"/>
+																	<Node id="-21" score="-2.4701324689028947" recordCount="315" defaultChild="8">
+																		<SimplePredicate field="HHR" operator="lessOrEqual" value="1.250984252"/>
+																		<Node id="8" score="0.6203239250541726" recordCount="308">
+																			<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="12.186823968868701"/>
+																		</Node>
+																		<Node id="21" score="-1.6624096831602015" recordCount="7">
+																			<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="12.186823968868701"/>
+																		</Node>
+																	</Node>
+																	<Node id="10" score="7.622996433837594" recordCount="2">
+																		<SimplePredicate field="HHR" operator="greaterThan" value="1.250984252"/>
+																	</Node>
+																</Node>
+																<Node id="-16" score="1.8199857021979333" recordCount="1076" defaultChild="9">
+																	<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="4.248090662665201"/>
+																	<Node id="9" score="2.556956581736298" recordCount="6">
+																		<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="94.00000000000001"/>
+																	</Node>
+																	<Node id="-17" score="-0.38102554144088063" recordCount="1070" defaultChild="-18">
+																		<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="94.00000000000001"/>
+																		<Node id="-18" score="0.12949713084924866" recordCount="205" defaultChild="-19">
+																			<SimplePredicate field="LBXPLTSI" operator="lessOrEqual" value="175.27854938828403"/>
+																			<Node id="-19" score="-1.5948341381123858" recordCount="170" defaultChild="-20">
+																				<SimplePredicate field="LBXWBCSI" operator="lessOrEqual" value="7.999834563885815"/>
+																				<Node id="-20" score="0.24297728180318603" recordCount="45" defaultChild="16">
+																					<SimplePredicate field="INDFMPIR" operator="lessOrEqual" value="1.1604438393854053"/>
+																					<Node id="16" score="-0.38102554144088063" recordCount="30">
+																						<SimplePredicate field="BMXBMI" operator="lessOrEqual" value="29.955489649369856"/>
+																					</Node>
+																					<Node id="20" score="-2.4701324689028947" recordCount="15">
+																						<SimplePredicate field="BMXBMI" operator="greaterThan" value="29.955489649369856"/>
+																					</Node>
+																				</Node>
+																				<Node id="19" score="0.24297728180318603" recordCount="125">
+																					<SimplePredicate field="INDFMPIR" operator="greaterThan" value="1.1604438393854053"/>
+																				</Node>
+																			</Node>
+																			<Node id="18" score="-1.5948341381123858" recordCount="35">
+																				<SimplePredicate field="LBXWBCSI" operator="greaterThan" value="7.999834563885815"/>
+																			</Node>
+																		</Node>
+																		<Node id="17" score="0.12949713084924866" recordCount="865">
+																			<SimplePredicate field="LBXPLTSI" operator="greaterThan" value="175.27854938828403"/>
+																		</Node>
+																	</Node>
+																</Node>
+															</Node>
+														</Node>
+													</Node>
+												</Node>
+											</Node>
+										</Node>
+										<Node id="2" score="2.937634132099379" recordCount="6">
+											<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="5.747411472658861"/>
+										</Node>
+									</Node>
+									<Node id="1" score="-1.5129095961601626" recordCount="22">
+										<SimplePredicate field="LBXRBCSI" operator="greaterThan" value="5.775000000000001"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+					</Segmentation>
+				</MiningModel>
+			</Segment>
+			<Segment id="2">
+				<True/>
+				<RegressionModel functionName="classification" normalizationMethod="logit">
+					<MiningSchema>
+						<MiningField name="_target" usageType="target"/>
+						<MiningField name="lgbmValue"/>
+					</MiningSchema>
+					<Output>
+						<OutputField name="probability(0)" optype="continuous" dataType="double" feature="probability" value="0"/>
+						<OutputField name="probability(1)" optype="continuous" dataType="double" feature="probability" value="1"/>
+					</Output>
+					<RegressionTable intercept="0.0" targetCategory="1">
+						<NumericPredictor name="lgbmValue" coefficient="1.0"/>
+					</RegressionTable>
+					<RegressionTable intercept="0.0" targetCategory="0"/>
+				</RegressionModel>
+			</Segment>
+		</Segmentation>
+	</MiningModel>
+</PMML>
