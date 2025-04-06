@@ -127,7 +127,7 @@ if st.button("Predict"):
     
     lime_exp = lime_explainer.explain_instance(
       data_row=input_df.values.flatten(),
-      predict_fn=model.predict_proba
+       predict_fn=pmml_predict
     )
     
     # Display LIME explanation
