@@ -49,8 +49,8 @@ if st.button("Predict"):
     
     # Make prediction
     prediction = pmml_model.predict(input_df)
-    prob_0 = prediction['probability(1)'][0]
-    prob_1 = prediction['probability(0)'][0]
+    prob_0 = prediction['probability(0)'][0]
+    prob_1 = prediction['probability(1)'][0]
     
     # Determine predicted class
     predicted_class = 1 if prob_1 >0.420804547829293 else 0
@@ -126,8 +126,8 @@ if st.button("Predict"):
     )
     
     lime_exp = lime_explainer.explain_instance(
-      data_row=input_df.values.flatten(),
-      predict_fn=lambda x: 1 - pmml_predict(x)  # 反转概率
+        data_row=input_df.values.flatten(),
+        predict_fn=model.predict_proba
     )
     
     # Display LIME explanation
