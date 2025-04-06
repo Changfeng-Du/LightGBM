@@ -127,7 +127,7 @@ if st.button("Predict"):
     
     lime_exp = lime_explainer.explain_instance(
       data_row=input_df.values.flatten(),
-      predict_fn=lambda x: 1 - pmml_predict(x)  # 反转概率
+      predict_fn=model.predict_proba
     )
     
     # Display LIME explanation
